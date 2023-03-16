@@ -54,23 +54,25 @@ function result(num1, num2) {
     }
 }
 
-const evenOrOdd = prompt("Scegli pari o dispari?").toLocaleLowerCase()
-const chooseANumber = Number(prompt("Scegli un numero da 1 a 5"))
-console.log(randomNumber());
-let pcNumber = randomNumber();
+while (confirm("Vuoi giocare?")) {
+    const evenOrOdd = prompt("Scegli pari o dispari?").toLocaleLowerCase()
+    const chooseANumber = Number(prompt("Scegli un numero da 1 a 5"))
+    console.log(randomNumber());
+    let pcNumber = randomNumber();
 
-let finalResult = result(chooseANumber, pcNumber)
-let playerPoints = 0;
-let pcPoints = 0;
+    let finalResult = result(chooseANumber, pcNumber)
+    let playerPoints = 0;
+    let pcPoints = 0;
 
-if (finalResult == evenOrOdd) {
-    document.querySelector(".result").innerHTML = "You win, The sum is even"
-    document.querySelector(".player").innerHTML = `Player ${++playerPoints} `
-    document.querySelector(".current_game_points_player").innerHTML = chooseANumber
-    document.querySelector(".current_game_points_pc").innerHTML = pcNumber
-} else {
-    document.querySelector(".result").innerHTML = "You Lost, The sum is odd"
-    document.querySelector(".computer").innerHTML = `computer ${++pcPoints} `
-    document.querySelector(".current_game_points_player").innerHTML = chooseANumber
-    document.querySelector(".current_game_points_pc").innerHTML = pcNumber
+    if (finalResult == evenOrOdd) {
+        document.querySelector(".result").innerHTML = "You win, The sum is even"
+        document.querySelector(".player").innerHTML = `Player ${++playerPoints} `
+        document.querySelector(".current_game_points_player").innerHTML = chooseANumber
+        document.querySelector(".current_game_points_pc").innerHTML = pcNumber
+    } else {
+        document.querySelector(".result").innerHTML = "You Lost, The sum is odd"
+        document.querySelector(".computer").innerHTML = `computer ${++pcPoints} `
+        document.querySelector(".current_game_points_player").innerHTML = chooseANumber
+        document.querySelector(".current_game_points_pc").innerHTML = pcNumber
+    }
 }
